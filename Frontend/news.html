@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Notícias - Escolas de Futebol do Cruzeiro</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/schools-styles.css">
+    <link rel="stylesheet" href="css/responsive-improvements.css">
+    <link rel="icon" type="image/png" href="https://imagens.cruzeiro.com.br/Escudos/Cruzeiro.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <section class="base">
+            <header>
+                <div class="container-logo">
+                    <div class="logo">
+                       <a href="index.html"> <img src="assets/img/logo-escola-em-aprovação.png" alt="Cruzeiro Logo"></a>
+                    </div>
+                    <div class="dropdown d-md-none">
+                        <button class="btn dropdown-toggle mobile-menu-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="menu-icon">&#9776;</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="index.html">Home</a></li>
+                            <li><a class="dropdown-item" href="benefits.html">Benefícios</a></li>
+                            <li><a class="dropdown-item" href="schools.html">Unidades</a></li>
+                            <li><a class="dropdown-item" href="news.html">Notícias</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="formLicenciado.html">Quero ser Franqueado</a></li>
+                        </ul>
+                    </div>
+                    <nav class="d-none d-md-flex">
+                        <ul class="nav-links">
+                            <li><a href="index.html" class="nav-item">Home</a></li>
+                            <li><a href="benefits.html" class="nav-item">Benefícios</a></li>
+                            <li><a href="schools.html" class="nav-item">Unidades</a></li>
+                            <li><a href="news.html" class="nav-item">Notícias</a></li>
+                            <li><a href="formLicenciado.html" class="btn-franqueado nav-franqueado"><button>Quero ser Franqueado</button></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            
+
+        </section>
+
+        <div class="news-letter">
+            <h1>Notícias</h1>
+            <div id="newsContainer"></div>
+            <div class="pagination-container text-center mt-4" style="display: flex !important; flex-direction: row !important; justify-content: center !important; align-items: center !important; gap: 12px !important;">
+                <button id="prevPage" class="btn btn-outline-primary me-2" disabled>Anterior</button>
+                <span id="pageInfo" class="mx-3">Página 1 de 1</span>
+                <button id="nextPage" class="btn btn-outline-primary ms-2" disabled>Próxima</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="newsModal" tabindex="-1" aria-labelledby="newsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content news-modal-wireframe">
+                <div class="news-modal-container">
+                    <h1 class="news-modal-title" id="newsModalLabel">Título da Notícia</h1>
+                    <div class="news-modal-image" id="newsModalImage"></div>
+                    <div class="news-modal-text" id="newsModalBody"></div>
+                </div>
+                <button type="button" class="fechar-noticia" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+        </div>
+    </div>
+
+     <footer>
+        <div class="footer-content">
+             <div class="footer-section contact">
+            <h3>Contato</h3>
+            <p> <a href="mailto:escolas@cruzeiro.com.br">escolas@cruzeiro.com.br</a></p>
+        </div>
+            <div class="footer-section about">
+                <h3>Sobre Nós</h3>
+                <p>O Escolas do Cruzeiro é a rede oficial de escolas de futebol do Cruzeiro, dedicada a formar novos talentos e promover o esporte em todo o Brasil.</p>
+            </div>
+           
+           
+             <div class="footer-section social">
+                        <h3>Siga-nos</h3>
+                        <a href="https://www.facebook.com/cruzeirooficial"><img class="icon-social" src="assets/img/facebook-icon.png" alt="Facebook"></a>
+                        <a href="https://www.instagram.com/cruzeiro/"><img class="icon-social" src="assets/img/instagram-icon.png" alt="Instagram"></a>
+                        <a href="https://www.youtube.com/user/OficialCruzeiro"><img class="icon-social" src="assets/img/youtube-icon.png" alt="YouTube"></a>
+                    </div>
+
+            <div class="autoral-rights">
+                <p>&copy; 2025 Escolas do Cruzeiro. Todos os direitos reservados.</p>
+            </div>
+        </div>
+        
+    </footer>
+
+    
+
+
+
+    
+    <script src="./js/script.js"></script>
+    <script src="./js/translator.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+        
+
+</body>
+</html>

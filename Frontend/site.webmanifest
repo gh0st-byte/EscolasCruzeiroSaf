@@ -1,0 +1,17 @@
+{
+  "name": "Escolas do Cruzeiro",
+  "short_name": "Cruzeiro",
+  "description": "Formação de atletas com metodologia exclusiva",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0033a0",
+  "theme_color": "#0033a0",
+  "icons": [
+    {
+      "src": "assets/img/ESCUDO CRUZEIRO 512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

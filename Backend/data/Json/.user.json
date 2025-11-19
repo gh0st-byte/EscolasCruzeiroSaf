@@ -1,0 +1,14 @@
+[
+    {
+        "username": "admin",
+        "password": "$2y$10$Zk6bVZMYtExDjPWLvf7KTOjqUHo0BBQcT19axsj1vTCHiHntLPI3."
+    },
+    {
+        "username": "marketing",
+        "password": "$2y$10$NH8kQHNYZboQN2q9qZc8kuJ9Z\/8OSWhmKcib2Oln9ze5fwyTA40ne"
+    },
+    {
+        "username": "comercial",
+        "password": "$2y$10$woMliwmtKBjcXKXeohSLAORQx3roOGIb0wHpB33T4vE6f7W0f68vS"
+    }
+]

@@ -393,4 +393,3 @@ O sistema se adapta automaticamente para:
 
 - **Desenvolvedor Reponsável:** Marco Túlio Paiva Repoles
 - **Empresa:** &copy;Cruzeiro Esporte Clube - SAF
-# EscolasCruzeiroSaf
