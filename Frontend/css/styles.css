@@ -739,7 +739,7 @@ a button {
     text-align: center;
     position: relative;
     min-height: 700px;
-    z-index: 1;
+    z-index: 0;
 }
 
 .metodologia h1 {
@@ -766,7 +766,7 @@ a button {
 
 .metodologia-carousel {
     width: 100%;
-    height: 480px;
+    height: 510px;
     padding: 0 24px;
     overflow-x: auto;
     overflow-y: hidden;
@@ -789,7 +789,6 @@ a button {
     justify-content: flex-start;
     margin: 0;
     padding-top: 16px;
-    padding-bottom: 100px;
 }
 
 .metodologia-cards {
@@ -799,17 +798,16 @@ a button {
     max-width: 350px;
     display: flex;
     justify-content: center;
-    margin-top: 14px;
+    margin-bottom: 15px;
 }
 
 .card-metodologia {
-    border-radius: 50px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-    padding: 38px 24px 30px 24px;
+    border-radius: 50px;    padding: 38px 24px 30px 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     transition: all 0.4s ease;
     background-size: cover;
     background-position: center;
@@ -817,9 +815,10 @@ a button {
     cursor: pointer;
     overflow: hidden;
     position: relative;
-    width: 350px;
-    height: 450px;
+    width: 360px;
+    height: 495px;
     left: 100px;
+    margin-bottom: 10px;
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     -ms-border-radius: 50px;
@@ -827,7 +826,7 @@ a button {
 }
 
 .card-metodologia p {
-    font-size: 1.5rem;
+    font-size: 1rem;
     line-height: 1.6;
     font-weight: 700;
     color: #fff;
@@ -863,7 +862,7 @@ a button {
 }
 
 .card-metodologia:hover {
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 60px rgba(0, 6, 56, 0.5);
     border-color: gold;
     transform: translateY(-8px);
 }
@@ -873,14 +872,17 @@ a button {
 }
 
 .card-metodologia h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    object-fit: fill;
     font-weight: 900;
     margin-bottom: 20px;
+    max-width: 280px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #fff;
+    color: gold;
     position: relative;
     z-index: 1;
+    text-align: center;
 }
 
 .btn-saiba-mais {
@@ -2106,7 +2108,7 @@ footer a:hover {
     }
     
     .card-metodologia { padding: 35px 20px; }
-    .card-metodologia h3 { font-size: 1.8rem; }
+    .card-metodologia h3 { font-size: 1.5rem; }
     
     .map-section h1 { font-size: 2.5rem; }
     .cta-2 h2 { font-size: 2.6rem; }
@@ -2330,7 +2332,7 @@ footer a:hover {
     }
     
     .card-metodologia { padding: 35px 20px; }
-    .card-metodologia h3 { font-size: 1.8rem; }
+    .card-metodologia h3 { font-size: 1.5rem; }
     
     .map-section h1 { font-size: 2.4rem; }
     .cta-2 h2 { font-size: 2.4rem; }
@@ -2415,11 +2417,14 @@ footer a:hover {
     }
     
     .card-metodologia h3 {
-        font-size: 1.6rem;
+        font-size: 1.3rem;
         margin-bottom: 16px;
     }
     
-    .card-metodologia p { font-size: 1.2rem; }
+    .card-metodologia p { 
+        font-size: 1rem;
+        sc
+    }
     
     .btn-saiba-mais {
         padding: 10px 24px;
