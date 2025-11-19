@@ -1,6 +1,6 @@
 // Configuração de segurança
 const CONFIG = {
-  API_BASE: '/Backend/api/data.php',
+  API_BASE: 'http://localhost:8000/api/data.php',
   FALLBACK_IMAGE: 'assets/img/404-error.png',
   DEBOUNCE_DELAY: 300,
   MAP_INIT_DELAY: 100,
@@ -54,7 +54,7 @@ const API = {
     if (cached) return cached;
     
     try {
-      const response = await fetch(`/Backend/api/data.php?file=${encodeURIComponent(file)}`);
+      const response = await fetch(`http://localhost:8000/api/data.php?file=${encodeURIComponent(file)}`);
       if (!response.ok) {
         console.error(`Erro HTTP ${response.status} ao carregar ${file}`);
         const errorText = await response.text();
@@ -620,6 +620,7 @@ async function salvarDadosLicenciado(dados) {
     'https://calvus-sylvester-limply.ngrok-free.dev/Backend/admin/index.php',
     '/Backend/admin/index.php',
     '../Backend/admin/index.php',
+    './admin/index.php',
     'Backend/admin/index.php'
   ];
   

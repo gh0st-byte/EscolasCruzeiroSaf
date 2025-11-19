@@ -8,6 +8,7 @@ $allowedOrigins = [
     'http://localhost:3000',
     'http://127.0.0.1:3000',
     'https://calvus-sylvester-limply.ngrok-free.dev',
+    'http://10.10.15.142:*',
     '*'
 ];
 
