@@ -55,7 +55,6 @@ EscolasDeFutebolDoCruzeiro/
 └── README.md              # Este arquivo
 ```
 
-
 ## Como Usar
 
 ### Frontend (Usuários)
@@ -261,7 +260,7 @@ php -S localhost:8000
 ### Servidor (AWS Lightsail)
 
 - **OS**: Ubuntu 20.04 LTS ou superior
-- **PHP**: 7.4+ com extensões: json, mbstring, curl
+- **PHP**: 8.2+ com extensões: json, mbstring, curl
 - **Servidor Web**: Apache 2.4+ (recomendado) ou Nginx
 - **ModSecurity**: 2.9+ (WAF - Web Application Firewall)
 - **SSL/TLS**: Certificado Let's Encrypt
