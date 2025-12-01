@@ -4,46 +4,89 @@
         "states": {
             "MG": {
                 "name": "Minas Gerais",
-                "cities": ["Arinos", "Belo Horizonte", "Carmo do Cajuru", "Congonhas", "Contagem", "Divinópolis", "Ipatinga", "Itabira", "João Monlevade", "Juiz de Fora", "Lagoa Santa", "Montes Claros", "Nova Lima", "Nova Serrana", "Pará de Minas", "Paracatu", "Porteirinha", "Ribeirão das Neves", "Santa Luzia", "Sarzedo", "Teófilo Otoni", "Unaí", "Betim", "Conselheiro Lafaiete", "Jardim Riacho das Pedras"]
+                "cities": [
+                    "Arinos",
+                    "Belo Horizonte",
+                    "Belo Horizonte – Barro Preto\/MG",
+                    "Belo Horizonte – Castelo\/MG",
+                    "Betim",
+                    "Carmo do Cajuru",
+                    "Congonhas",
+                    "Conselheiro Lafaiete",
+                    "Contagem",
+                    "Divinópolis",
+                    "Ipatinga",
+                    "Itabira",
+                    "Jardim Riacho das Pedras",
+                    "João Monlevade",
+                    "Juiz de Fora",
+                    "Lagoa Santa",
+                    "Montes Claros",
+                    "Nova Lima",
+                    "Nova Serrana",
+                    "Paracatu",
+                    "Pará de Minas",
+                    "Porteirinha",
+                    "Ribeirão das Neves",
+                    "Santa Luzia",
+                    "Sarzedo",
+                    "Teófilo Otoni",
+                    "Unaí"
+                ]
             },
             "SP": {
-                "name": "São Paulo", 
-                "cities": ["Caieiras"]
+                "name": "São Paulo",
+                "cities": [
+                    "Caieiras"
+                ]
             },
             "DF": {
                 "name": "Distrito Federal",
-                "cities": ["Brasília"]
+                "cities": [
+                    "Brasília"
+                ]
             },
             "CE": {
                 "name": "Ceará",
-                "cities": ["Fortaleza"]
+                "cities": [
+                    "Fortaleza"
+                ]
             },
             "RS": {
                 "name": "Rio Grande do Sul",
-                "cities": ["Pelotas"]
+                "cities": [
+                    "Pelotas"
+                ]
             },
             "ES": {
                 "name": "Espírito Santo",
-                "cities": ["Vila Velha"]
+                "cities": [
+                    "Vila Velha"
+                ]
             },
             "MA": {
                 "name": "Maranhão",
-                "cities": ["São Luís"]
+                "cities": [
+                    "São Luís"
+                ]
             },
             "RJ": {
                 "name": "Rio de Janeiro",
-                "cities": ["Japeri"]
+                "cities": [
+                    "Japeri"
+                ]
             }
         }
     },
-    
     "Mundo": {
         "Colômbia": {
             "name": "Colômbia",
             "states": {
                 "Cundinamarca": {
                     "name": "Cundinamarca",
-                    "cities": ["Bogotá"]
+                    "cities": [
+                        "Bogotá"
+                    ]
                 }
             }
         },
@@ -52,7 +95,9 @@
             "states": {
                 "Villa El Salvador": {
                     "name": "Villa El Salvador",
-                    "cities": ["San Borja"]
+                    "cities": [
+                        "San Borja"
+                    ]
                 }
             }
         },
@@ -61,7 +106,9 @@
             "states": {
                 "Watthana": {
                     "name": "Watthana",
-                    "cities": ["Bangkok"]
+                    "cities": [
+                        "Bangkok"
+                    ]
                 }
             }
         },
@@ -70,11 +117,15 @@
             "states": {
                 "Massachusetts": {
                     "name": "Massachusetts",
-                    "cities": ["Boston"]
+                    "cities": [
+                        "Boston"
+                    ]
                 },
                 "Pensilvânia": {
                     "name": "Pensilvânia",
-                    "cities": ["New Jersey"]
+                    "cities": [
+                        "New Jersey"
+                    ]
                 }
             }
         }

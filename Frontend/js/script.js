@@ -894,9 +894,8 @@ function openNewsModal(index) {
   document.getElementById('newsModalBody').innerHTML = `
     ${dateText ? `<div class="news-date mb-3"><strong>${Security.escapeHtml(dateText)}</strong></div>` : ''}
     ${news.subtitle ? `<h4 class="mb-3">${Security.escapeHtml(news.subtitle)}</h4>` : ''}
-    <div class="news-content">${Security.escapeHtml(news.content).replace(/\n/g, '<br>')}</div>
-  `;
-  
+    <div class="news-content" style="color: rgba(0, 8, 67, 0.95); line-height: 1.6; white-space: pre-wrap;">${Security.escapeHtml(news.content || 'Conteúdo não disponível')}</div>
+  `; 
   new bootstrap.Modal(document.getElementById('newsModal')).show();
 }
 

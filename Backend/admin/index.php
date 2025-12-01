@@ -645,15 +645,15 @@ if ($tab_atual === 'news.json' || $tab_atual === 'news_draft.json' || $tab_atual
                         
                         <?php if ($tab_atual === 'schools.json'): ?>
                             <div class="field-group">
-                                <label> Endereço Original</label>
-                                <input type="text" name="endereco" placeholder="Endereço como foi fornecido inicialmente">
+                                <label> Endereço que servirá de referência*</label>
+                                <input type="text" name="endereco" placeholder="Endereço como referência para o usuário">
                             </div>
                             <div class="field-group">
                                 <label> Telefone</label>
                                 <input type="text" name="telefone" placeholder="(31) 99999-9999">
                             </div>
                             <div class="field-group">
-                                <label> WhatsApp</label>
+                                <label> WhatsApp*</label>
                                 <input type="text" name="whatsapp" placeholder="5531999999999" value="">
                                 <small style="color: #e74c3c; font-weight: 900;"> Digite apenas números: 55 + DDD + número</small>
                             </div>
@@ -662,7 +662,7 @@ if ($tab_atual === 'news.json' || $tab_atual === 'news_draft.json' || $tab_atual
                                 <input type="text" name="instagram" placeholder="@escolacruzeiro">
                             </div>
                             <div class="field-group">
-                                <label> URL do Instagram</label>
+                                <label> User para URL do Instagram</label>
                                 <input type="text" name="instagram_url" placeholder="escolacruzeiro" value="">
                                 <small>Digite apenas o nome de usuário (sem @)</small>
                             </div>
@@ -749,7 +749,7 @@ if ($tab_atual === 'news.json' || $tab_atual === 'news_draft.json' || $tab_atual
                                 <td><?= htmlspecialchars($item['title']) ?></td>
                                 <td><?= htmlspecialchars($item['subtitle'] ?? '') ?></td>
                                 <td><?= htmlspecialchars(($item['dayWeek'] ?? '') . ', ' . ($item['date'] ?? '') . ' de ' . ($item['month'] ?? '')) ?></td>
-                                <td class="endereco"><?= htmlspecialchars(substr($item['content'], 0, 100)) ?>...</td>
+                                <td class="endereco" style="white-space: pre-wrap;"><?= htmlspecialchars(substr($item['content'], 0, 100)) ?>...</td>
                                 <td class="actions">
                                     <button onclick="visualizarNoticia(<?= $index ?>)">Visualizar</button>
                                     <button onclick="editarItem(<?= $index ?>)">Editar</button>
@@ -1172,11 +1172,11 @@ if ($tab_atual === 'news.json' || $tab_atual === 'news_draft.json' || $tab_atual
             
             document.getElementById('newsModalBody').innerHTML = 
                 '<div class="news-meta" style="margin-bottom: 1rem; text-align: center;">' +
-                    (dateText ? '<span class="news-date" style="color: gold; font-weight: 600;">' + dateText + '</span>' : '') +
+                    (dateText ? '<span class="news-date" style="color: rgba(0, 8, 67, 0.95); font-weight: 600;">' + dateText + '</span>' : '') +
                 '</div>' +
                 '<div class="news-content">' +
                     (item.subtitle ? '<h3 style="color:  rgba(0, 8, 67, 0.95); margin-bottom: 1rem;">' + item.subtitle + '</h3>' : '') +
-                    '<p style="color: rgba(0, 8, 67, 0.95); line-height: 1.6;">' + (item.content || 'Conteúdo não disponível') + '</p>' +
+                    '<div style="color: rgba(0, 8, 67, 0.95); line-height: 1.6; white-space: pre-wrap;">' + (item.content || 'Conteúdo não disponível') + '</div>' +
                 '</div>';
             
             document.getElementById('newsModal').style.display = 'flex';
