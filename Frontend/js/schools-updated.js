@@ -9,7 +9,7 @@ let filtrosSelecionados = {
 // Carregar dados dos filtros
 async function carregarFiltros() {
     try {
-        const response = await fetch('/Backend/api/data.php?file=allRegionsFilters.json');
+        const response = await fetch('http://localhost:8000/api/data.php?file=allRegionsFilters.json');
         if (response.ok) {
             filtrosDisponiveis = await response.json();
         }
