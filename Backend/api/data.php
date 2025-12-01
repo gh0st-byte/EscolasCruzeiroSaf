@@ -42,7 +42,7 @@ $allowed_files = [
 
 if (!$file || !in_array($file, $allowed_files)) {
     http_response_code(400);
-    echo json_encode(['error' => 'Arquivo não permitido']);
+    echo json_encode(['error' => 'Acesso negado ao arquivo solicitado']);
     exit;
 }
 

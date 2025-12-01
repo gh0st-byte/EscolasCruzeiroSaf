@@ -35,7 +35,7 @@ if (isset($_GET['logout'])) {
 
 // Funções para manipular JSON
 function lerJSON($arquivo) {
-    $allowed_files = ['schools.json', 'failed_addresses.json', 'news.json', 'news_draft.json', '.user.json', 'licenciadosProposta.json'];
+    $allowed_files = ['schools.json', 'failed_addresses.json', 'news.json', 'news_draft.json', '.user.json', 'licenciadosProposta.json', 'allRegionsFilters.json'];
     if (!in_array($arquivo, $allowed_files)) return [];
     
     $caminho = "../data/Json/$arquivo";
@@ -46,12 +46,47 @@ function lerJSON($arquivo) {
 }
 
 function salvarJSON($arquivo, $dados) {
-    $allowed_files = ['schools.json', 'failed_addresses.json', 'news.json', 'news_draft.json', '.user.json', 'licenciadosProposta.json'];
+    $allowed_files = ['schools.json', 'failed_addresses.json', 'news.json', 'news_draft.json', '.user.json', 'licenciadosProposta.json', 'allRegionsFilters.json'];
     if (!in_array($arquivo, $allowed_files)) return false;
     
     $caminho = "../data/Json/$arquivo";
     $json = json_encode($dados, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
     return file_put_contents($caminho, $json);
+}
+
+function atualizarFiltrosRegiao($regiao, $estado, $cidade) {
+    $filtros = lerJSON('allRegionsFilters.json');
+
+    if ($regiao === 'Brasil') {
+        if (!isset($filtros['Brasil']['states'][$estado])) {
+            $filtros['Brasil']['states'][$estado] = [
+                'name' => $estado,
+                'cities' => []
+            ];
+        }
+        if (!in_array($cidade, $filtros['Brasil']['states'][$estado]['cities'])) {
+            $filtros['Brasil']['states'][$estado]['cities'][] = $cidade;
+            sort($filtros['Brasil']['states'][$estado]['cities']);
+        }
+    } else {
+        if (!isset($filtros['Mundo'][$regiao])) {
+            $filtros['Mundo'][$regiao] = [
+                'name' => $regiao,
+                'states' => []
+            ];
+        }
+        if (!isset($filtros['Mundo'][$regiao]['states'][$estado])) {
+            $filtros['Mundo'][$regiao]['states'][$estado] = [
+                'name' => $estado,
+                'cities' => []
+            ];
+        }
+        if (!in_array($cidade, $filtros['Mundo'][$regiao]['states'][$estado]['cities'])) {
+            $filtros['Mundo'][$regiao]['states'][$estado]['cities'][] = $cidade;
+            sort($filtros['Mundo'][$regiao]['states'][$estado]['cities']);
+        }
+    }
+    return salvarJSON('allRegionsFilters.json', $filtros);
 }
 function processarAcoesUsuario($acao, $arquivo, $dados) {
     $index = (int)($_POST['index'] ?? -1);
@@ -204,7 +239,7 @@ if ($_POST && isset($_POST['acao']) && isset($_POST['arquivo'])) {
     }
     
     // Validar arquivo permitido
-    $allowed_files = ['schools.json', 'failed_addresses.json', 'news.json', 'news_draft.json', '.user.json', 'licenciadosProposta.json'];
+    $allowed_files = ['schools.json', 'failed_addresses.json', 'news.json', 'news_draft.json', '.user.json', 'licenciadosProposta.json', 'allRegionsFilters.json'];
     if (!in_array($arquivo, $allowed_files)) {
         http_response_code(400);
         header('Content-Type: application/json');
@@ -253,6 +288,14 @@ if ($_POST && isset($_POST['acao']) && isset($_POST['arquivo'])) {
                         $novo['instagram_url'] = $_POST['instagram_url'] ?? null;
                         $novo['ComoChegar'] = $_POST['ComoChegar'] ?? null;
                         $novo['estado'] = $_POST['estado'] ?? '';
+                        
+                        // Atualizar filtros de região automaticamente
+                        if (!empty($_POST['cidade']) && !empty($_POST['region'])) {
+                            $regiao = $_POST['region'];
+                            $estado = $_POST['estado'] ?? $_POST['region'];
+                            $cidade = $_POST['cidade'];
+                            atualizarFiltrosRegiao($regiao, $estado, $cidade);
+                        }
                     } elseif ($arquivo === 'news.json' || $arquivo === 'news_draft.json') {
                         $novo = [
                             'title' => $_POST['title'],
@@ -316,6 +359,14 @@ if ($_POST && isset($_POST['acao']) && isset($_POST['arquivo'])) {
                             $dados[$index]['instagram_url'] = $_POST['instagram_url'] ?: null;
                             $dados[$index]['ComoChegar'] = $_POST['ComoChegar'] ?: null;
                             $dados[$index]['estado'] = $_POST['estado'] ?? '';
+                            
+                            // Atualizar filtros de região ao editar
+                            if (!empty($_POST['cidade']) && !empty($_POST['region'])) {
+                                $regiao = $_POST['region'];
+                                $estado = $_POST['estado'] ?? $_POST['region'];
+                                $cidade = $_POST['cidade'];
+                                atualizarFiltrosRegiao($regiao, $estado, $cidade);
+                            }
                         }
                     }
                     salvarJSON($arquivo, $dados);
