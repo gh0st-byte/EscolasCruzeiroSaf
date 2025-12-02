@@ -181,9 +181,6 @@ sudo git clone https://github.com/seu-usuario/EscolasDeFutebolDoCruzeiro.git .
 sudo chown -R www-data:www-data Backend/data/Json/
 sudo chmod -R 755 Backend/data/Json/
 
-# Configurar variáveis de ambiente
-sudo cp .env.example .env
-sudo nano .env  # Editar credenciais
 ```
 
 ### 4. Configurar SSL (HTTPS)
